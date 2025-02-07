@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { initializeApp } from "firebase/app";
 import {getMessaging} from "firebase/messaging";
-import "./Dashboard.css"; // Import custom CSS file
-import logo from "./logo.png"; // Add your image path
-
+import "../Dashboard.css"; // Import custom CSS file
+import logo from "../assets/logo.png"; // Add your image path
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -82,19 +83,22 @@ const Dashboard = () => {
     }, []);
 
     const [isNotificationOpen, setIsNotificationOpen] = useState(false);
-
+    const status = true;
     return (
-        <div className="dashboard">
+        
+        <>
+        <Navbar status={{status}}/>
+        <div className="dashboard" style={{backgroundColor: 'royalblue'}}>
             {/* Centered Logo */}
-            <div className="logo-container">
+            <div className="logo-container mb-8">
                 <img src={logo} alt="Team Logo" className="team-logo" />
             </div>
 
             {/* Project Title */}
-            <h2 className="project-title">4-DOF Disaster Response Rover Control Panel</h2>
+            <h2 className="project-title my-4">4-DOF Disaster Response Rover Control Panel</h2>
 
             {/* Data Boxes */}
-            <div className="data-boxes">
+            <div className="data-boxes my-4">
                 <div className="data-box"><h3>Temperature</h3><p>{temperature}°C</p></div>
                 <div className="data-box"><h3>Humidity</h3><p>{humidity}%</p></div>
                 <div className="data-box"><h3>Gas Level</h3><p>{gasLevel} PPM</p></div>
@@ -107,7 +111,7 @@ const Dashboard = () => {
 
             {/* Notification Sidebar */}
             <div className={`notification-sidebar ${isNotificationOpen ? "open" : ""}`}>
-                <h3 className="notification-title" onClick={() => setIsNotificationOpen(!isNotificationOpen)}>
+                <h3 className="notification-title text-center bg-blue" onClick={() => setIsNotificationOpen(!isNotificationOpen)}>
                     Notifications {isNotificationOpen ? "▼" : "▶"}
                 </h3>
                 {isNotificationOpen && (
@@ -119,6 +123,8 @@ const Dashboard = () => {
                 )}
             </div>
         </div>
+        <Footer/>
+        </>
     );
 };
 
