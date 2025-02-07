@@ -1,23 +1,16 @@
 import React from "react";
-import Dashboard from "./components/Dashboard";
-import {generateToken} from "./notifications/firebase";
-import {useEffect} from "react";
-import {onMessage} from "firebase/messaging";
-
-
+import Landing from "./pages/landing"
+import Starting from "./pages/Starting";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
-  // useEffect(()=>{
-  //   generateToken();
-  //   onMessage(messaging,(payload)=>{
-  //     console.log(payload);
-  //   })
-  // },[]);
-
   return (
-    <div>
-      <Dashboard />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/landing" element={<Landing />} />
+        <Route path="/" element={<Starting />} />
+      </Routes>
+    </Router>
   );
 }
 
