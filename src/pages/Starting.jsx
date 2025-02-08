@@ -3,7 +3,6 @@ import {
   Activity,
   AlertTriangle,
   BarChart3,
-  Droplet,
   GaugeCircle,
   MapPin,
   Shield,
@@ -41,11 +40,13 @@ function Starting() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-6 text-center bg-gray-100 rounded-lg shadow hover:shadow-lg"
+                className="p-6 text-center bg-gray-100 rounded-lg shadow hover:shadow-lg flex flex-col items-center"
               >
                 {feature.icon}
-                <h3 className="mt-4 text-xl font-semibold">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <div className="flex items-center">
+                  <h3 className="text-xl font-semibold">{feature.title}</h3>
+                </div>
+                <p className="text-gray-600 mt-2">{feature.description}</p>
               </div>
             ))}
           </div>
