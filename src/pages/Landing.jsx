@@ -66,7 +66,7 @@ const Landing = ({ message }) => {
           <img src={logo} alt="Team Logo" className="w-48" />
         </div>
         <h2 className="font-bold text-3xl text-gray-900 my-4">
-          4-DOF Disaster Response Rover Control Panel
+          4-DOF Repair Mechanism Rover Control Panel
         </h2>
         <div className="grid grid-cols-4 gap-6 my-4">
         {[
