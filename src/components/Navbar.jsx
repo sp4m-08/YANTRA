@@ -10,7 +10,7 @@ function Navbar({status}) {
         <nav className="container flex items-center justify-between px-6 py-4 mx-auto">
           <div className="flex items-center space-x-2">
             <Droplet className="w-8 h-8" />
-            <span className="text-xl font-bold">PipeGuard</span>
+            <span className="text-xl font-bold">Voltech</span>
           </div>
           {!status &&<div className="hidden space-x-8 md:flex">
             <a href="#features" className="hover:text-blue-200">

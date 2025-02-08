@@ -20,7 +20,7 @@ function Starting() {
       <Navbar props={{status}}/>
 
       {/* Hero Section */}
-      <section className="container px-6 py-24 mx-auto text-center">
+      <section className="container px-6 py-24 mx-auto text-center flex flex-col justify-center content-center">
         <h1 className="mb-6 text-5xl font-bold text-gray-900 md:text-6xl">
           Smart Pipeline Leak Detection
         </h1>
@@ -28,12 +28,7 @@ function Starting() {
           Advanced IoT-based system for real-time monitoring and early leak
           detection in industrial pipelines.
         </p>
-        <button className="px-8 py-3 mr-4 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700">
-          Request Demo
-        </button>
-        <button className="px-8 py-3 font-semibold text-blue-600 bg-white border border-blue-600 rounded-full hover:bg-blue-50">
-          Learn More
-        </button>
+       
       </section>
 
       {/* Features Section */}
@@ -79,10 +74,10 @@ function Starting() {
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-20 bg-white">
-        <div className="container px-6 mx-auto">
+      <section id="benefits" className="py-20 bg-white flex flex-col justify-center content-center">
+        <div className="container px-6 mx-auto flex flex-col justify-center content-center">
           <h2 className="mb-12 text-3xl font-bold text-center">Key Benefits</h2>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 justify-items-center">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start space-x-4">
                 {benefit.icon}
