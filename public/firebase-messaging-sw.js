@@ -1,5 +1,6 @@
-import { initializeApp } from "firebase/app";
-import { getMessaging, onBackgroundMessage } from "firebase/messaging";
+// firebase-messaging-sw.js
+importScripts("https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js");
+importScripts("https://www.gstatic.com/firebasejs/10.8.0/firebase-messaging-compat.js");
 
 const firebaseConfig = {
   apiKey: "AIzaSyBIKe4X5dwajvLsmCM9atK7zobY5ZQPgDA",
@@ -12,18 +13,17 @@ const firebaseConfig = {
   measurementId: "G-SSZJPTSXS4"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const messaging = getMessaging(app);
+firebase.initializeApp(firebaseConfig);
+const messaging = firebase.messaging();
 
-// Handle background messages
-onBackgroundMessage(messaging, (payload) => {
-  console.log('[SW] Background message received:', payload);
+
+messaging.onBackgroundMessage((payload) => {
+  console.log("Background message received:", payload);
   const notificationTitle = payload.notification?.title || "New Notification";
   const notificationOptions = {
-    body: payload.notification?.body || "You have a new notification",
-    icon: '/firebase-logo.png', // Ensure this is in your public folder
+    body: payload.notification?.body || "You have a new message",
+    icon: "/firebase-logo.png",
   };
-
-  self.registration.showNotification(notificationTitle, notificationOptions);
+  
+  return self.registration.showNotification(notificationTitle, notificationOptions);
 });

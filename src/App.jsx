@@ -4,6 +4,7 @@ import Starting from "./pages/Starting";
 import { messaging } from "./firebase"; // Remove requestForToken from import
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { getToken, onMessage } from "firebase/messaging"; // Import from Firebase directly
+import Loading from "./pages/Loading";
 
 function App() {
   const [notification, setNotification] = useState("");
@@ -55,6 +56,8 @@ function App() {
       <Routes>
         <Route path="/landing" element={<Landing />} />
         <Route path="/" element={<Starting />} />
+        <Route path="/loading" element={<Loading />} />
+
       </Routes>
       {notification && <div>🔔 Notification: {notification}</div>}
     </Router>
