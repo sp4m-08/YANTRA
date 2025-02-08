@@ -25,7 +25,7 @@ function Navbar({status}) {
           </div>}
           <button
             className="px-6 py-2 font-semibold text-blue-600 bg-white rounded-full hover:bg-blue-50"
-            onClick={() => (window.location.href = "/landing")}
+            onClick={() => (window.location.href = "/loading")}
           >
             Get Started
           </button>
