@@ -11,19 +11,7 @@ function App() {
 
   // Keep the token request function inside the component
   const requestForToken = async () => {
-    try {
-      const permission = await Notification.requestPermission();
-      if (permission === "granted") {
-        const token = await getToken(messaging, {
-          vapidKey: "BJkLUDzt2r49s5UVBYxoPKWXQ1V6lk0h_dWbwrQB0xJRVQugXyNm45bGz8nHC64BhMBb5gi4semDeaz7cWqWylM",
-        });
-        console.log("FCM Token:", token);
-      } else {
-        console.log("Permission denied for notifications.");
-      }
-    } catch (error) {   
-      console.error("Error getting FCM token:", error);
-    }
+    
   };
 
   useEffect(() => {

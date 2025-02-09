@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-    Droplet,
-  } from "lucide-react";
+import logo from '../assets/logo.png'
 
 function Navbar({status}) {
   return (
@@ -9,7 +7,7 @@ function Navbar({status}) {
     <header className="text-white bg-gradient-to-r from-blue-600 to-blue-800">
         <nav className="container flex items-center justify-between px-6 py-4 mx-auto">
           <div className="flex items-center space-x-2">
-            <Droplet className="w-8 h-8" />
+            <img src={logo} alt="Voltech Logo" style={{height:"40px",width:"40px"}}/>
             <span className="text-xl font-bold">Voltech</span>
           </div>
           {!status &&<div className="hidden space-x-8 md:flex">
@@ -23,12 +21,17 @@ function Navbar({status}) {
               Benefits
             </a>
           </div>}
-          <button
+          {!status?<button
             className="px-6 py-2 font-semibold text-blue-600 bg-white rounded-full hover:bg-blue-50"
             onClick={() => (window.location.href = "/loading")}
           >
             Get Started
-          </button>
+          </button>:<button
+            className="px-6 py-2 font-semibold text-blue-600 bg-white rounded-full hover:bg-blue-50"
+            onClick={() => (window.location.href = "/")}
+          >
+            Home
+          </button>}
         </nav>
       </header>
       </>
