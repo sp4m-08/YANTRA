@@ -1,0 +1,10 @@
+{
+    "temperature": 27,
+    "humidity": 60,
+    "flame_detected": 0,
+    "gas_level": 50,
+    "tremor_level": 3,
+    "location": "Lat: 12° 58' 9.12'' Long: 79° 09' 21.24''",
+    "impact_level": 5
+  }
+  
