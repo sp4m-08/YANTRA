@@ -11,7 +11,7 @@ function App() {
 
   // Keep the token request function inside the component
   const requestForToken = async () => {
-    
+  
   };
 
   useEffect(() => {

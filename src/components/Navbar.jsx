@@ -7,7 +7,7 @@ function Navbar({status}) {
     <header className="text-white bg-gradient-to-r from-blue-600 to-blue-800">
         <nav className="container flex items-center justify-between px-6 py-4 mx-auto">
           <div className="flex items-center space-x-2">
-            <img src={logo} alt="Voltech Logo" style={{height:"40px",width:"40px"}}/>
+            <img src={logo} alt="Voltech Logo" style={{height:"40px",width:"40px",borderRadius:"20%"}}/>
             <span className="text-xl font-bold">Voltech</span>
           </div>
           {!status &&<div className="hidden space-x-8 md:flex">
@@ -23,7 +23,7 @@ function Navbar({status}) {
           </div>}
           {!status?<button
             className="px-6 py-2 font-semibold text-blue-600 bg-white rounded-full hover:bg-blue-50"
-            onClick={() => (window.location.href = "/loading")}
+            onClick={() => (window.location.href = "/landing")}
           >
             Get Started
           </button>:<button
